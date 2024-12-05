@@ -1,0 +1,11 @@
+.options-header{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.options-header li p{
+  font-size: 2vmin;
+  text-align: center;
+  cursor: pointer;
+}

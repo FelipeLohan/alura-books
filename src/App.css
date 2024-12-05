@@ -5,35 +5,8 @@
   background-image: linear-gradient(90deg,#002F52 35%,#326589 165%);
 }
 
-.App-header{
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
 
-}
 
 li {
   list-style: none;
-}
-
-.options-header{
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.options-header li p{
-  font-size: 2vmin;
-  text-align: center;
-  cursor: pointer;
-}
-
-.icons-header{
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.icons-header img{
-  cursor: pointer;
 }
