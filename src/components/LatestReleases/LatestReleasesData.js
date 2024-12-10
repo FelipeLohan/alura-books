@@ -14,5 +14,5 @@ export const livros = [
   {nome: 'JavaScript',
     id: 4,
     src: livro,
-  }
+  },
 ]
