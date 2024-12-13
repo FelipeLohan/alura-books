@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const OptionsNavContainer = styled.ul`
   display: flex;
@@ -12,7 +13,7 @@ text-align: center;
 cursor: pointer;
 `
 
-const optionsText = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE']
+const optionsText = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE']
 
 export default function OptionsHeader() {
   return (
@@ -20,7 +21,7 @@ export default function OptionsHeader() {
       <OptionsNavContainer>
         {optionsText.map((e) => (
           <li>
-            <OptionItem>{e}</OptionItem>
+           <Link to={`/${e.toLowerCase()}`}><OptionItem>{e}</OptionItem></Link> 
           </li>
         ))}
       </OptionsNavContainer>

@@ -1,8 +1,8 @@
-
 import Logo from "../logo/index.js";
 import OptionsHeader from "../OptionsHeader/index.js";
 import IconsHeader from "../IconsHeader/index.js";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   background-color: #fff;
@@ -14,7 +14,9 @@ export default function Header() {
   return (
     <>
       <HeaderContainer>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         <OptionsHeader />
         <IconsHeader />
       </HeaderContainer>
