@@ -11,6 +11,8 @@ const OptionItem = styled.p`
 font-size: 2vmin;
 text-align: center;
 cursor: pointer;
+display: flex;
+align-items: center;
 `
 
 const optionsText = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE']
