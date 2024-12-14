@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useEffect } from "react";
 import { getBooks } from "../../services/books.js";
+import { postFavoriteBook } from "../../services/favoritos.js";
+import LivroImg from '../../images/livro.png';
 
 const SearchContainer = styled.section`
   display: flex;
@@ -31,6 +33,11 @@ const LivroCardContainer = styled.div`
   background-color: #07253b;
   border-radius: 6px;
   padding: 40px;
+
+  &:hover {
+    border: 1px solid white;
+    cursor: pointer;
+  }
 `
 
 const TituloLivro = styled.p`
@@ -56,6 +63,11 @@ export default function Pesquisa() {
     setLivros(booksOfApi)
   }
 
+  async function insertFavorite(id){
+    await postFavoriteBook(id)
+    alert('Livro inserido')
+  }
+
   return (
     <>
       <SearchContainer>
@@ -73,9 +85,9 @@ export default function Pesquisa() {
         
         <LivrosContainer>
       {livroPesquisado.map((livro) => (
-          <LivroCardContainer>
+          <LivroCardContainer onClick={() => insertFavorite(livro.id)}>
             <TituloLivro>{livro.nome}</TituloLivro>
-            <CapaLivro src={livro.src} />
+            <CapaLivro src={LivroImg} />
           </LivroCardContainer>
         ))}
         </LivrosContainer>
