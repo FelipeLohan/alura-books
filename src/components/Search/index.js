@@ -1,7 +1,8 @@
 import Input from "../Input/index.js";
 import styled from "styled-components";
 import { useState } from "react";
-import { livros } from "./searchData.js";
+import { useEffect } from "react";
+import { getBooks } from "../../services/books.js";
 
 const SearchContainer = styled.section`
   display: flex;
@@ -44,6 +45,16 @@ const CapaLivro = styled.img`
 `
 export default function Pesquisa() {
   const [livroPesquisado, setLivroPesquisado] = useState([]);
+  const [livros, setLivros] = useState([])
+
+  useEffect(() => {
+    fetchBooks()
+  }, [])
+
+  async function fetchBooks() {
+    const booksOfApi = await getBooks()
+    setLivros(booksOfApi)
+  }
 
   return (
     <>
